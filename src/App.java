@@ -57,37 +57,49 @@ public class App {
         
 
         //FAZEDOR DE QUESTÃO
-        for (int i = 0; i < questoes.length; i++ ){
-            System.out.print("\033[H\033[2J");
-            questSele();
+        String simOuNao = "";
+        while (simOuNao.equals("S")){
+            for (int i = 0; i < questoes.length; i++ ){
+                System.out.print("\033[H\033[2J");
+                questSele();
 
-            if (i == 0){
-                digitarLetraPorLetra("Aliás esqueci de mencionar mas existe um sistema de pontuação", 20);
-                Thread.sleep(1000);
-                digitarLetraPorLetra("Cada questão lhe dá um total de 10 pontos qunando corretas e 1 quando erradas", 20);
-                Thread.sleep(500);
-                if(pontos == 1){
-                    digitarLetraPorLetra("E pelo visto você não começou muito... bem...", 10);
+                if (i == 0){
+                    digitarLetraPorLetra("Aliás esqueci de mencionar mas existe um sistema de pontuação", 20);
                     Thread.sleep(1000);
-                    digitarLetraPorLetra("Mas fica tranquilo, com certeza tudo vai pio-", 10);
-                    Thread.sleep(100);
-                    System.out.println("DIGO!");
-                    Thread.sleep(100);
-                    System.out.println("DIGO!");
-                    Thread.sleep(200);
-                    digitarLetraPorLetra("Melhorar :D, vai melhorar :D",10);
-                } else if (pontos == 10){
-                    digitarLetraPorLetra("E aparentemente você já começou acertanto!! Quanto conhecimento!!", 10);
-                    System.out.println("Ou sorte.");
-                    digitarLetraPorLetra("Devo aumentar a dificuldade?", i);
-                    digitarLetraPorLetra("Brinadeiras a parte. Tudo dependerá da questão que você sortear aleatoriamente.", 10);
+                    digitarLetraPorLetra("Cada questão lhe dá um total de 10 pontos qunando corretas e 1 quando erradas", 20);
+                    Thread.sleep(500);
+                    if(pontos == 1){
+                        digitarLetraPorLetra("E pelo visto você não começou muito... bem...", 10);
+                        Thread.sleep(1000);
+                        digitarLetraPorLetra("Mas fica tranquilo, com certeza tudo vai pio-", 10);
+                        Thread.sleep(100);
+                        System.out.println("DIGO!");
+                        Thread.sleep(100);
+                        System.out.println("DIGO!");
+                        Thread.sleep(200);
+                        digitarLetraPorLetra("Melhorar :D, vai melhorar :D",10);
+                    } else if (pontos == 10){
+                        digitarLetraPorLetra("E aparentemente você já começou acertanto!! Quanto conhecimento!!", 10);
+                        System.out.println("Ou sorte.");
+                        digitarLetraPorLetra("Devo aumentar a dificuldade?", i);
+                        digitarLetraPorLetra("Brinadeiras a parte. Tudo dependerá da questão que você sortear aleatoriamente.", 10);
+                    }
+                    Thread.sleep(1000);
+                    System.out.println("ENFIM");
+                    digitarLetraPorLetra("Partiu próxima questão.", 10);
+                    Thread.sleep(1000);
+                } else {
+                    System.out.println("Próxima pergunta.");
                 }
-                Thread.sleep(1000);
-                System.out.println("ENFIM");
-                digitarLetraPorLetra("Partiu próxima questão.", 10);
-                Thread.sleep(1000);
-            } else {
-                System.out.println("Próxima pergunta.");
+            }
+
+            System.out.println("Quer jogar de novo?");
+            System.out.println("S para SIM!!! e n para não.");
+            simOuNao = resposta.next().toUpperCase();
+            if (simOuNao.equals("S"));{
+                for(int i = 0; i < questoes.length; i++){
+                    questoes[i][3] = "0";
+                }
             }
         }
     }
@@ -153,7 +165,7 @@ public class App {
         boolean validador = false;
         int repetidor = 0;
         while (validador == false) {
-            resp = resposta.next();
+            resp = resposta.next().toUpperCase();
             if(resp.equals("A") || resp.equals("B") || resp.equals("C") || resp.equals("D")) {
                 validador = true;
                 repetidor = 0;
