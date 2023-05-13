@@ -238,7 +238,7 @@ public class App {
 
     }
 
-    // Digitalizador.
+    // DIGITALIZADOR.
     public static void Digitalizador(String texto, int delay) throws InterruptedException {
         // DIGITA LETRA POR LETRA COM UM DELAY EM CADA
         for (int i = 0; i < texto.length(); i++) {
@@ -248,7 +248,7 @@ public class App {
         System.out.println();
     }
 
-    // CHECADOR DE QUESTÕES
+    // CHECADOR DE QUESTÕES 
     public static int ChecadorDeQuestoes() {
         int i = 0;
 
