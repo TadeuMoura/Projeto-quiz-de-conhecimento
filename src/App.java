@@ -1,3 +1,8 @@
+//* # INFORMATIVO # *//
+//Métodos são iniciados com ##
+//* # ----------- # *//
+
+
 import java.util.Scanner;
 import java.util.Random;
 
@@ -10,118 +15,187 @@ public class App {
     static String[][] questoes = {
 
             { "Qual o nome do cantor e dançarino Naldo?",
-                    "A) Arnaldo\nB) Ronaldo\nC) Reinaldo\nD) Naldo",
-                    "B",
+                    "A) Arnaldo",
+                    "B) Ronaldo",
+                    "C) Reinaldo,",
+                    "D) Naldo",
+                    "2",
                     "0" },
 
             { "No seriado 'El Chavo del Ocho', mais conhecido como Chaves aqui no Brasil, a personagem 'Dona Clotilde' foi apelidada pelas crianças como a 'Bruxa do ...'",
-                    "A) 71\nB) 91\nC) 51\nD) 361",
-                    "A",
+                    "A) 71",
+                    "B) 91",
+                    "C) 51",
+                    "D) 361",
+                    "1",
                     "0" },
 
             { "Qual o nome do Super Choque?",
-                    "A) Vurgil Hawkins\nB) Vurgil Hawkins Ovid\nC) Willian Hawkins\nD) Virgil Ovid Hawkins",
-                    "D",
+                    "A) Vurgil Hawkins",
+                    "B) Vurgil Hawkins Ovid",
+                    "C) Willian Hawkins",
+                    "D) Virgil Ovid Hawkins",
+                    "4",
                     "0" },
 
             { "O que a palavra legend significa em português?",
-                    "A) Legenda\nB) Conto\nC) Lenda\nD) Legendário",
-                    "C",
+                    "A) Legenda",
+                    "B) Conto",
+                    "C) Lenda",
+                    "D) Legendário",
+                    "3",
                     "0" },
 
             { "Qual o número mínimo de jogadores em cada time numa partida de futebol?",
-                    "A) 8\nB) 10\nC) 9\nD) 7",
-                    "D",
+                    "A) 8",
+                    "B) 10",
+                    "C) 9",
+                    "D) 7",
+                    "4",
                     "0" },
 
             { "Quais as duas datas que são comemoradas em novembro?",
-                    "A) Independência do Brasil e Dia da Bandeira\nB) Proclamação da República e Dia Nacional da Consciência Negra\nC) Black Friday e Dia da Árvore\nD) Dia de Finados e    Dia Nacional do Livro",
-                    "B",
+                    "A) Independência do Brasil e Dia da Bandeira",
+                    "B) Proclamação da República e Dia Nacional da Consciência Negra",
+                    "C) Black Friday e Dia da Árvore",
+                    "D) Dia de Finados e    Dia Nacional do Livro",
+                    "2",
                     "0" },
 
             { "Quanto tempo a luz do Sol demora para chegar à Terra?",
-                    "A) 12 minutos\nB) 1 dia\nC) 12 horas\nD) 8 minutos",
-                    "D",
+                    "A) 12 minutos",
+                    "B) 1 dia",
+                    "C) 12 horas",
+                    "D) 8 minutos",
+                    "4",
                     "0" },
 
             { "Que animal gruguleja?",
-                    "A) o pavão\nB) a garça\nC) o peru\nD) a cacatua",
-                    "C",
+                    "A) o pavão",
+                    "B) a garça",
+                    "C) o peru",
+                    "D) a cacatua",
+                    "3",
                     "0" },
 
             { "Qual destas obras arquitetônicas brasileiras é uma das Sete Maravilhas do Mundo Moderno?",
-                    "A) Elevador Lacerda\nB) Cristo Redentor\nC) Estação da Luz\nD) One Tower",
-                    "B",
+                    "A) Elevador Lacerda",
+                    "B) Cristo Redentor",
+                    "C) Estação da Luz",
+                    "D) One Tower",
+                    "2",
                     "0" },
 
             { "O que é Pix?",
-                    "A) Meio de pagamento instantâneo criado pelo Banco Central do Brasil\nB) Plano de investimento de baixo risco do Banco do Brasil\nC) Conjunto de formas de pagamento realizados por subadquirentes\nD) Forma de pagamento online",
-                    "A",
+                    "A) Meio de pagamento instantâneo criado pelo Banco Central do Brasil",
+                    "B) Plano de investimento de baixo risco do Banco do Brasil",
+                    "C) Conjunto de formas de pagamento realizados por subadquirentes",
+                    "D) Forma de pagamento online",
+                    "1",
                     "0" },
 
             { "Qual a montanha mais alta do mundo?",
-                    "A) Mauna Kea\nB) Dhaulagiri\nC) Monte Chimborazo\nD) Monte Everest",
-                    "D",
+                    "A) Mauna Kea",
+                    "B) Dhaulagiri",
+                    "C) Monte Chimborazo",
+                    "D) Monte Everest",
+                    "4",
                     "0" },
 
             { "Quanto tempo a Terra demora para dar uma volta completa em torno dela mesma?",
-                    "A) Aproximadamente 24 horas\nB) 365 dias\nC) 7 dias\nD) 30 ou 31 dias",
-                    "A",
+                    "A) Aproximadamente 24 horas",
+                    "B) 365 dias",
+                    "C) 7 dias",
+                    "D) 30 ou 31 dias",
+                    "1",
                     "0" },
 
             { "Qual a maior floresta tropical do mundo?",
-                    "A) Mata Atlântica\nB) Pampas\nC) Pantanal\nD) Floresta Amazônica",
-                    "D",
+                    "A) Mata Atlântica",
+                    "B) Pampas",
+                    "C) Pantanal",
+                    "D) Floresta Amazônica",
+                    "4",
                     "0" },
 
             { "Kryptonita é a fraqueza de qual super-herói?",
-                    "A) Batman\nB) Hulk\nC) Super-Homem\nD) Capitão América",
-                    "C",
+                    "A) Batman",
+                    "B) Hulk",
+                    "C) Super-Homem",
+                    "D) Capitão América",
+                    "3",
                     "0" },
 
             { "Qual a personagem mais famosa de Maurício de Sousa?",
-                    "A) Mafalda\nB) Mônica\nC) Smurfette\nD) Magali",
-                    "B",
+                    "A) Mafalda",
+                    "B) Mônica",
+                    "C) Smurfette",
+                    "D) Magali",
+                    "2",
                     "0" },
 
             { "Que cidade brasileira é conhecida por chover todos os dias quase à mesma hora?",
-                    "A) São Paulo\nB) Joinville\nC) Belém\nD) Natal",
-                    "C",
+                    "A) São Paulo",
+                    "B) Joinville",
+                    "C) Belém",
+                    "D) Natal",
+                    "3",
                     "0" },
 
             { "Qual o maior podcast do Brasil?",
-                    "A)Podpah\nB)PODPAH\nC)Podpah é muito zika assista\nD)PODPAH",
-                    "C",
+                    "A)Podpah",
+                    "B)PODPAH",
+                    "C)Podpah é muito zika assista",
+                    "D)PODPAH",
+                    "3",
                     "0" },
 
             { "Em que país foi construído o Muro de Berlim?",
-                    "A) Estados Unidos\nB) China\nC) Brasil\nD) Alemanha",
-                    "D",
+                    "A) Estados Unidos",
+                    "B) China",
+                    "C) Brasil",
+                    "D) Alemanha",
+                    "4",
                     "0" },
 
             { "Depois do futebol, qual o esporte mais popular no Brasil?",
-                    "A) Esqui\nB) Vôlei\nC) Hóquei no gelo\nD) Golfe",
-                    "B",
+                    "A) Esqui",
+                    "B) Vôlei",
+                    "C) Hóquei no gelo",
+                    "D) Golfe",
+                    "2",
                     "0" },
 
             { "Em que conto de fadas uma princesa adormece com um feitiço e só acorda com o beijo de um príncipe?",
-                    "A)A Bela Adormecida\nB)João e Maria\nC)Chapeuzinho Vermelho\nD)Patinho Feio",
-                    "A",
+                    "A)A Bela Adormecida",
+                    "B)João e Maria",
+                    "C)Chapeuzinho Vermelho",
+                    "D)Patinho Feio",
+                    "1",
                     "0" },
 
             { "Que fruto nasce da oliveira?",
-                    "A)Amêndoa\nB)Abacate\nC)Azeitona\nD)Açaí",
-                    "C",
+                    "A)Amêndoa",
+                    "B)Abacate",
+                    "C)Azeitona",
+                    "D)Açaí",
+                    "3",
                     "0" },
 
             { "Qual o plural de chapéu?",
-                    "A) Chapéis\nB) Chapéus\nC) Chapéuzes\nD) Chapuzes",
-                    "B",
+                    "A) Chapéis",
+                    "B) Chapéus",
+                    "C) Chapéuzes",
+                    "D) Chapuzes",
+                    "2",
                     "0" },
 
             { "Que navio famoso naufragou na sua viagem inaugural?",
-                    "A) Titanic\nB) Antonov\nC) Boeing\nD) Airbus",
-                    "A",
+                    "A) Titanic",
+                    "B) Antonov",
+                    "C) Boeing",
+                    "D) Airbus",
+                    "1",
                     "0" }
     };
 
@@ -210,7 +284,7 @@ public class App {
     // ------------------------------------------------------------------
     // MÉTODOS
 
-    // SELETOR DE QUESTÕES
+    // ## SELETOR DE QUESTÕES
     public static void QuestSele() throws InterruptedException {
 
         // TELA DE LOADING DA QUESTÃO
@@ -238,7 +312,7 @@ public class App {
 
     }
 
-    // DIGITALIZADOR.
+    // ## DIGITALIZADOR.
     public static void Digitalizador(String texto, int delay) throws InterruptedException {
         // DIGITA LETRA POR LETRA COM UM DELAY EM CADA
         for (int i = 0; i < texto.length(); i++) {
@@ -248,7 +322,7 @@ public class App {
         System.out.println();
     }
 
-    // CHECADOR DE QUESTÕES 
+    // ## CHECADOR DE QUESTÕES 
     public static int ChecadorDeQuestoes() {
         int i = 0;
 
@@ -278,7 +352,7 @@ public class App {
         return nRand;
     }
 
-    // ALTERNATIVA
+    // ## ALTERNATIVA
     public static void AnlsDeAlternativa(int nquest) throws InterruptedException {
 
         // RESPOSTA VAZIA
@@ -345,4 +419,8 @@ public class App {
             Thread.sleep(2000);
         }
     }
+
+    // ## PULA QUESTÃO
+
+    // ## ELIMINA ALTERNATIVA
 }
