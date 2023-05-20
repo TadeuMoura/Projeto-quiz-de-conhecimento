@@ -10,7 +10,7 @@ public class App {
     static Scanner resposta = new Scanner(System.in);
     
     static int pontos = 0;
-    static int changesDePular = 3;
+    static int changesDePular = 4;
     static int changesDeEliminar = 3;
 
     // QUESTÕES
