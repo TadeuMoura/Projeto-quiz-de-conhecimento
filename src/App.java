@@ -1,7 +1,6 @@
-//* # INFORMATIVO # *//
+//* # INFORMATIVO # *// 
 //Métodos são iniciados com ##
 //* # ----------- # *//
-
 
 import java.util.Scanner;
 import java.util.Random;
@@ -9,7 +8,10 @@ import java.util.Random;
 public class App {
     // VARIÁVEIS GLOBAIS
     static Scanner resposta = new Scanner(System.in);
+    
     static int pontos = 0;
+    static int changesDePular = 3;
+    static int changesDeEliminar = 3;
 
     // QUESTÕES
     static String[][] questoes = {
@@ -17,7 +19,7 @@ public class App {
             { "Qual o nome do cantor e dançarino Naldo?",
                     "A) Arnaldo",
                     "B) Ronaldo",
-                    "C) Reinaldo,",
+                    "C) Reinaldo",
                     "D) Naldo",
                     "2",
                     "0" },
@@ -58,7 +60,7 @@ public class App {
                     "A) Independência do Brasil e Dia da Bandeira",
                     "B) Proclamação da República e Dia Nacional da Consciência Negra",
                     "C) Black Friday e Dia da Árvore",
-                    "D) Dia de Finados e    Dia Nacional do Livro",
+                    "D) Dia de Finados e Dia Nacional do Livro",
                     "2",
                     "0" },
 
@@ -196,7 +198,87 @@ public class App {
                     "C) Boeing",
                     "D) Airbus",
                     "1",
-                    "0" }
+                    "0" },
+            { "Qual a altura da rede de vôlei nos jogos masculino e feminino?", 
+                    "A)2,4 para ambos",
+                    "B)2,5 m e 2,0 m",
+                    "C)1,8 m e 1,5 m",
+                    "D)2,43 m e 2,24 m",
+                    "4",
+                    "0" },
+        
+            { "Qual personagem folclórico costuma ser agradado pelos caçadores com a oferta de fumo?", 
+                    "A)Caipora",
+                    "B)Saci",
+                    "C)Lobisomem",
+                    "D)Boitatá",
+                    "1",
+                    "0" },
+        
+            { "Qual a montanha mais alta do Brasil?", 
+                    "A)Pico da Neblina",
+                    "B)Pico Paraná",
+                    "C)Monte Roraima",
+                    "D)Pico Maior de Friburgo",
+                    "1",
+                    "0" },
+        
+            { "Quais destas doenças são sexualmente transmissíveis?", 
+                    "A)Aids, tricomoníase e ebola",
+                    "B)Chikungunya, aids e herpes genital",
+                    "C)Gonorreia, clamídia e sífilis",
+                    "D)Botulismo, cistite e gonorreia",
+                    "3",
+                    "0" },
+        
+                
+            { "Qual o maior animal terrestre?", 
+                    "A)Baleia Azul",
+                    "B)Dinossauro",
+                    "C)Elefante africano",
+                    "D)Girafa",
+                    "3",
+                    "0" },
+        
+            { "Com que dois países faz fronteira o Equador?", 
+                    "A)com o Brasil e com a Colômbia",
+                    "B)com a Colômbia e com a Venezuela",
+                    "C)com a Colômbia e com o Peru",
+                    "D)com o Equador e o Brasil",
+                    "3",
+                    "0" },
+        
+            { "Qual das alternativas contém apenas vacinas contra a covid-19?", 
+                    "A)VIP/VOP e AstraZeneca",
+                    "B)CoronaVac e AstraZeneca",
+                    "C)HPV e BioNTech",
+                    "D)Pentavalente (DTPa) e Sputnik V",
+                    "2",
+                    "0" },
+        
+            { "Qual das alternativas traz uma das medidas do presidente Trump, anunciada em 2017, que causou polêmica?", 
+                    "A)Construção de um muro na fronteira com o Canadá",
+                    "B)Cessação de Acordo de Comércio Livre (ACL) entre os Estados Unidos e Israel",
+                    "C)Saída do Acordo de Paris",
+                    "D)Saída da OTAN - Organização do Tratado do Atlântico Norte",
+                    "3",
+                    "0" },
+        
+            { "O que é Pix?", 
+                    "A)Meio de pagamento instantâneo criado pelo Banco Central do Brasil",
+                    "B)Plano de investimento de baixo risco do Banco do Brasil",
+                    "C)Conjunto de formas de pagamento realizados por subadquirentes",
+                    "D)Forma de pagamento online",
+                    "1",
+                    "0" },
+        
+            { "Qual a função da ONU?", 
+                    "A)Zelar pela cultura em todas as nações",
+                    "B)Unir as nações com o objetivo de manter a paz e a segurança mundial",
+                    "C)Financiar países em desenvolvimento",
+                    "D)Regular o funcionamento do sistema financeiro a nível internacional",
+                    "2",
+                    "0" },
     };
 
     // PRINCIPAL
@@ -207,7 +289,7 @@ public class App {
         String cumprimento = " ___ ___              ___ ___\n" +
                 "|       |  |         |       |   |\n" +
                 "|       |  |         |___ ___|   |\n" +
-                "|       |  |	     |       |   |\n" +
+                "|       |  |         |       |   |\n" +
                 "|___ ___|  |___ ___  |       |   0";
         Digitalizador(cumprimento, 1);
 
@@ -272,11 +354,15 @@ public class App {
             Thread.sleep(500);
             System.out.println("S para SIM!!! e n para não.");
             simOuNao = resposta.next().toUpperCase();
+            while (!simOuNao.equals("S") && !simOuNao.equals("N")){
+                System.out.println("Digite para sim e n para não.");
+                simOuNao = resposta.next().toUpperCase();
+            }
             if (simOuNao.equals("S")) {
-                for (int i = 0; i < questoes.length; i++) {
-                    questoes[i][3] = "0";
-                }
-                pontos = 0;
+            for (int i = 0; i < questoes.length; i++) {
+                questoes[i][6] = "0";
+            }
+            pontos = 0;
             }
         }
     }
@@ -303,10 +389,14 @@ public class App {
         // USA O CHECADOR DE QUESTÕES PARA PEGAR UM NOME ALEATÓRIO
         int numeroQuestao = ChecadorDeQuestoes();
 
-        // MOSTRANDO A QUESTÃO [0] E AS ALTERNATIVAS [1]
+        // MOSTRANDO A QUESTÃO [0] E AS ALTERNATIVAS [1][2][3][4]
         Digitalizador(questoes[numeroQuestao][0], 10);
         Digitalizador(questoes[numeroQuestao][1], 5);
+        Digitalizador(questoes[numeroQuestao][2], 5);
+        Digitalizador(questoes[numeroQuestao][3], 5);
+        Digitalizador(questoes[numeroQuestao][4], 5);
 
+        
         // VERIFICA A DIGITAÇÃO DA ALTERNATIVA
         AnlsDeAlternativa(numeroQuestao);
 
@@ -335,16 +425,16 @@ public class App {
 
             // ARMAZENA UM NÚMERO ALEATÓRIO
             int numeroAletorio = rand.nextInt(questoes.length);
-            String verifUso = questoes[numeroAletorio][3];
+            String verifUso = questoes[numeroAletorio][6];
 
             // VERIFICA SE A QUESTÃO FOI OU NÃO USADA
-            // USADA = 1 - NÃO USADA = 0
+            // USADA = 1; NÃO USADA = 0
             if (verifUso.equals("1")) {
                 continue;
             }
 
             // ARMAZENA O VALOR DA QUESTÃO NO RETORNO
-            questoes[numeroAletorio][3] = "1";
+            questoes[numeroAletorio][6] = "1";
             nRand = numeroAletorio;
             i = 1;
 
@@ -364,13 +454,31 @@ public class App {
         // DEFINI QUAL RESPOSTA MOSTRAR SE A PESSOA DIGITAR ERRADO UMA OU MAIS VEZES
         int repetidor = 0;
 
+        int numeroAlternativa = 0;
+
         // SAI DA REPETIÇÃO QUANDO O VALIDADOR FOR VERDADEIRO
         while (validador == false) {
             resp = resposta.next().toUpperCase();
+            
 
             // VALIDA SE A PESSOA DIGITAR A, B, C OU D
             if (resp.equals("A") || resp.equals("B") || resp.equals("C") || resp.equals("D")) {
                 validador = true;
+                
+                switch (resp){
+                    case "A":
+                        numeroAlternativa = 1;
+                        break;
+                    case "B":
+                        numeroAlternativa = 2;
+                        break;
+                    case "C":
+                        numeroAlternativa = 3;
+                        break;
+                    case "D":
+                        numeroAlternativa = 4;
+                        break;
+                };
                 repetidor = 0;
             } else {
 
@@ -404,7 +512,7 @@ public class App {
         }
 
         // SE A RESPOSTA ESTIVER CORRETA
-        if (resp.trim().equals(questoes[nquest][2])) {
+        if (numeroAlternativa ==  Integer.parseInt(questoes[nquest][5])) {
             System.out.print("\033[H\033[2J");
             Digitalizador("A reposta está EEEEEEEEEEEEEEEEEEEEEEEEEXATA!!!!!", 100);
             pontos = pontos + 10;
@@ -423,4 +531,5 @@ public class App {
     // ## PULA QUESTÃO
 
     // ## ELIMINA ALTERNATIVA
+
 }
