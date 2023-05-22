@@ -283,6 +283,8 @@ public class App {
                     "0" },
     };
 
+private static int i;
+
     // PRINCIPAL
     public static void main(String[] args) throws Exception {
 
@@ -316,8 +318,12 @@ public class App {
         // REPETIÇÃO QUE SÓ É TERMINADA QUANDO A PESSOA NÃO QUISER JOGAR DENOVO
         while (simOuNao.equals("S")) {
             for (int i = 0; i < 20; i++) {
+                int carro = 0;  
                 System.out.print("\033[H\033[2J");
+
+
                 QuestSele();
+
 
                 // ALGUNS IF INTERATIVOS
                 if (i == 0) {
@@ -325,6 +331,8 @@ public class App {
                     Thread.sleep(1000);
                     Digitalizador("Cada questão lhe dá um total de 10 pontos quando corretas e 1 quando erradas", 20);
                     Thread.sleep(500);
+
+
                     if (pontos == 1) {
                         Digitalizador("E pelo visto você não começou muito... bem...", 10);
                         Thread.sleep(1000);
@@ -339,14 +347,32 @@ public class App {
                         Digitalizador("E aparentemente você já começou acertanto!! Quanto conhecimento!!", 10);
                         System.out.println("Ou sorte.");
                         Digitalizador("Devo aumentar a dificuldade?", i);
-                        Digitalizador("Brinadeiras a parte. Tudo dependerá da questão que você sortear aleatoriamente.",
+                        Digitalizador("Brincadeiras a parte. Tudo dependerá da questão que você sortear aleatoriamente.",
                                 10);
                     }
                     Thread.sleep(1000);
+
+
                     System.out.println("ENFIM");
                     Digitalizador("Partiu próxima questão.", 10);
                     Thread.sleep(1000);
                 } else {
+
+                        if(pontos == 50 && i == 5) {
+                                Digitalizador("Tá acertando todas em, se continuar assim vai ganhar um carro no final do jogo.",0); 
+                                carro = 1;  
+                        } if(pontos <= 30 && i == 8) {
+                                Digitalizador("Tempos difíceis em campeão, fé que até o final do quiz você da a volta por cima!!", 0);   
+                        } if(pontos == 200 && i == 20) {
+                                if(carro == 1) 
+                                        Digitalizador("Sabe aquele carro que eu te prometi no começo do jogo?, então... acabei de bater ele no poste rs.", 0);   
+                                } else {
+                                        Digitalizador("Parabéns você gabaritou o nosso Quiz!!!, se a produção deixar nós te daremos uma medalha!", 0);   
+                                }
+                        } if(pontos > 100) {
+                                Digitalizador("Mais que 100 pontos parabéns!!! ", 0);   
+                        }
+
                     Digitalizador("Próxima questão", 10);
                     Thread.sleep(2000);
                 }
@@ -367,7 +393,7 @@ public class App {
             pontos = 0;
             }
         }
-    }
+    
 
     // ------------------------------------------------------------------
     // MÉTODOS
