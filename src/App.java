@@ -559,5 +559,33 @@ private static int i;
     // ## PULA QUESTÃO
 
     // ## ELIMINA ALTERNATIVA
+    public static void EliminarAlternativas(int nQuest) {
+        Random aleatorio = new Random();
+       
+        // Array com as letras das alternativas
+        String[] alternativas = {"A", "B", "C", "D"};
 
+        // Seleciona a alternativa correta
+        int alternativaCorreta = Integer.parseInt(questoes[nQuest][5]);
+        String respostaCorreta = alternativas[alternativaCorreta];
+
+        // Remove duas alternativas incorretas aleatoriamente
+        int alternativaAletoria = aleatorio.nextInt(4);
+        int alternativasRemovidas = 0;
+        while (alternativasRemovidas < 2) {
+            int index = alternativaAletoria;
+            if (index != alternativaCorreta && alternativas[index] != null) {
+                alternativas[index] = null;
+                alternativasRemovidas++;
+            }
+        }
+
+        // Exibe as alternativas disponíveis
+        for (String alternativa : alternativas) {
+            if (alternativa != null) {
+                System.out.println("[" + alternativa + "]");
+            }
+        }
+    
+    }
 }
