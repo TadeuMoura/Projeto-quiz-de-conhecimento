@@ -12,8 +12,9 @@ public class App {
     static Scanner resposta = new Scanner(System.in);
     
     static int pontos = 0;
-    static int changesDePular = 4;
-    static int changesDeEliminar = 3;
+    static int chancesDePular = 4;
+    static int chancesDeEliminar = 3;
+    static int carro = 0;
 
     // QUESTÕES
     static String[][] questoes = {
@@ -268,7 +269,7 @@ public class App {
         
             { "O que é Pix?", 
                     "A)Meio de pagamento instantâneo criado pelo Banco Central do Brasil",
-                    "B)Plano de investimento de baixo risco do Banco do Brasil",
+                    "B)respPlano de investimento de baixo risco do Banco do Brasil",
                     "C)Conjunto de formas de pagamento realizados por subadquirentes",
                     "D)Forma de pagamento online",
                     "1",
@@ -318,7 +319,7 @@ private static int i;
         // REPETIÇÃO QUE SÓ É TERMINADA QUANDO A PESSOA NÃO QUISER JOGAR DENOVO
         while (simOuNao.equals("S")) {
             for (int i = 0; i < 20; i++) {
-                int carro = 0;  
+                  
                 System.out.print("\033[H\033[2J");
 
 
@@ -391,6 +392,7 @@ private static int i;
                 questoes[i][6] = "0";
             }
             pontos = 0;
+            carro = 0;
             }
         }
     
@@ -423,6 +425,10 @@ private static int i;
         Digitalizador(questoes[numeroQuestao][2], 5);
         Digitalizador(questoes[numeroQuestao][3], 5);
         Digitalizador(questoes[numeroQuestao][4], 5);
+
+        if (chancesDeEliminar > 0) {
+                Digitalizador("Você pode eliminar duas das alternativas " + chancesDeEliminar + " vez(es), basta digitar T.", 5);
+        }
 
         
         // VERIFICA A DIGITAÇÃO DA ALTERNATIVA
@@ -488,6 +494,10 @@ private static int i;
         while (validador == false) {
             resp = resposta.next().toUpperCase();
             
+            if (resp.equals("T") && chancesDeEliminar > 0) {
+                EliminarAlternativas(nquest);
+                resp = resposta.next().toUpperCase();
+            }
 
             // VALIDA SE A PESSOA DIGITAR A, B, C OU D
             if (resp.equals("A") || resp.equals("B") || resp.equals("C") || resp.equals("D")) {
@@ -559,33 +569,38 @@ private static int i;
     // ## PULA QUESTÃO
 
     // ## ELIMINA ALTERNATIVA
-    public static void EliminarAlternativas(int nQuest) {
+    public static void EliminarAlternativas(int nQuest) throws InterruptedException {
         Random aleatorio = new Random();
        
         // Array com as letras das alternativas
-        String[] alternativas = {"A", "B", "C", "D"};
-
+        String[] alternativas = {"A","B", "C", "D"};
+ 
         // Seleciona a alternativa correta
         int alternativaCorreta = Integer.parseInt(questoes[nQuest][5]);
-        String respostaCorreta = alternativas[alternativaCorreta];
 
         // Remove duas alternativas incorretas aleatoriamente
-        int alternativaAletoria = aleatorio.nextInt(4);
+        
         int alternativasRemovidas = 0;
         while (alternativasRemovidas < 2) {
-            int index = alternativaAletoria;
-            if (index != alternativaCorreta && alternativas[index] != null) {
-                alternativas[index] = null;
+            //int alternativaAleatoria = aleatorio.nextInt(4);
+            //int index = alternativaAleatoria;
+            int nAleatorio = aleatorio.nextInt();
+            if (nAleatorio != alternativaCorreta && alternativas[nAleatorio] != null) {
+                alternativas[nAleatorio] = null;
                 alternativasRemovidas++;
             }
         }
 
         // Exibe as alternativas disponíveis
-        for (String alternativa : alternativas) {
-            if (alternativa != null) {
-                System.out.println("[" + alternativa + "]");
+        Digitalizador(questoes[nQuest][0], 10);
+        //for (String alternativa : alternativas) 
+        for (int i = 0; i < alternativas.length; i++) {
+            if (alternativas[i] != null) {
+                Digitalizador(questoes[nQuest][i+1], 10);
+                //System.out.println("[" + alternativas + "]");
             }
         }
-    
+        
+        chancesDeEliminar--;
     }
 }
