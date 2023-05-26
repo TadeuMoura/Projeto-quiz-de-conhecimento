@@ -16,6 +16,10 @@ public class App {
     static int chancesDeEliminar = 3;
     static int carro = 0;
 
+    // VARIÁVEIS DE DELAY
+    static int delay5 = 5;
+    static int delay10 = 10;
+
     // QUESTÕES
     static String[][] questoes = {
 
@@ -284,8 +288,6 @@ public class App {
                     "0" },
     };
 
-private static int i;
-
     // PRINCIPAL
     public static void main(String[] args) throws Exception {
 
@@ -300,15 +302,15 @@ private static int i;
 
         Thread.sleep(500);
         System.out.println("");
-        Digitalizador("Seja bem-vindo ao Quiz do conhecimento.", 10);
+        Digitalizador("Seja bem-vindo ao Quiz do conhecimento.", delay10);
         Thread.sleep(2000);
-        Digitalizador("Não precisa provar nada, só tu responder certo e seguir feliz.", 10);
+        Digitalizador("Não precisa provar nada, só tu responder certo e seguir feliz.", delay10);
         Thread.sleep(3000);
         System.out.println("Mesmo que seja na base do chute ;D");
         Thread.sleep(1000);
         System.out.println("ENFIM!!!!!!");
         Thread.sleep(1000);
-        Digitalizador("Bora começar a diversão ÒuÓ!!!!", 10);
+        Digitalizador("Bora começar a diversão ÒuÓ!!!!", delay10);
         Thread.sleep(2000);
         System.out.println("Ou não.");
         Thread.sleep(1000);
@@ -322,40 +324,38 @@ private static int i;
                   
                 System.out.print("\033[H\033[2J");
 
-
                 QuestSele();
-
 
                 // ALGUNS IF INTERATIVOS
                 if (i == 0) {
                     Digitalizador("Aliás esqueci de mencionar, mas existe um sistema de pontuação", 20);
                     Thread.sleep(1000);
-                    Digitalizador("Cada questão lhe dá um total de 10 pontos quando corretas e 1 quando erradas", 20);
+                    Digitalizador("Cada questão lhe dá um total de delay10 pontos quando corretas e 1 quando erradas", 20);
                     Thread.sleep(500);
 
 
                     if (pontos == 1) {
-                        Digitalizador("E pelo visto você não começou muito... bem...", 10);
+                        Digitalizador("E pelo visto você não começou muito... bem...", delay10);
                         Thread.sleep(1000);
-                        Digitalizador("Mas fica tranquilo, com certeza tudo vai pio-", 10);
+                        Digitalizador("Mas fica tranquilo, com certeza tudo vai pio-", delay10);
                         Thread.sleep(500);
                         System.out.println("DIGO!");
                         Thread.sleep(500);
                         System.out.println("DIGO!");
                         Thread.sleep(500);
-                        Digitalizador("Melhorar :D, vai melhorar :D", 10);
+                        Digitalizador("Melhorar :D, vai melhorar :D", delay10);
                     } else if (pontos == 10) {
                         Digitalizador("E aparentemente você já começou acertanto!! Quanto conhecimento!!", 10);
                         System.out.println("Ou sorte.");
-                        Digitalizador("Devo aumentar a dificuldade?", i);
+                        Digitalizador("Devo aumentar a dificuldade?", delay10);
                         Digitalizador("Brincadeiras a parte. Tudo dependerá da questão que você sortear aleatoriamente.",
-                                10);
+                                delay10);
                     }
                     Thread.sleep(1000);
 
 
                     System.out.println("ENFIM");
-                    Digitalizador("Partiu próxima questão.", 10);
+                    Digitalizador("Partiu próxima questão.", delay10);
                     Thread.sleep(1000);
                 } else {
 
@@ -371,15 +371,15 @@ private static int i;
                                         Digitalizador("Parabéns você gabaritou o nosso Quiz!!!, se a produção deixar nós te daremos uma medalha!", 0);   
                                 }
                         } if(pontos > 100) {
-                                Digitalizador("Mais que 100 pontos parabéns!!! ", 0);   
+                                Digitalizador("Mais que 100 pontos parabéns!!! ", delay10);   
                         }
 
-                    Digitalizador("Próxima questão", 10);
+                    Digitalizador("Próxima questão", delay10);
                     Thread.sleep(2000);
                 }
             }
 
-            Digitalizador("Quer jogar de novo?", 15);
+            Digitalizador("Quer jogar de novo?", delay10);
             Thread.sleep(500);
             System.out.println("S para SIM!!! e n para não.");
             simOuNao = resposta.next().toUpperCase();
@@ -420,11 +420,11 @@ private static int i;
         int numeroQuestao = ChecadorDeQuestoes();
 
         // MOSTRANDO A QUESTÃO [0] E AS ALTERNATIVAS [1][2][3][4]
-        Digitalizador(questoes[numeroQuestao][0], 10);
-        Digitalizador(questoes[numeroQuestao][1], 5);
-        Digitalizador(questoes[numeroQuestao][2], 5);
-        Digitalizador(questoes[numeroQuestao][3], 5);
-        Digitalizador(questoes[numeroQuestao][4], 5);
+        Digitalizador(questoes[numeroQuestao][0], delay10);
+        Digitalizador(questoes[numeroQuestao][1], delay5);
+        Digitalizador(questoes[numeroQuestao][2], delay5);
+        Digitalizador(questoes[numeroQuestao][3], delay5);
+        Digitalizador(questoes[numeroQuestao][4], delay5);
 
         if (chancesDeEliminar > 0) {
                 Digitalizador("Você pode eliminar duas das alternativas " + chancesDeEliminar + " vez(es), basta digitar T.", 5);
@@ -573,7 +573,7 @@ private static int i;
         Random aleatorio = new Random();
        
         // Array com as letras das alternativas
-        String[] alternativas = {"A","B", "C", "D"};
+        String[] alternativas = {"A", "B", "C", "D"};
  
         // Seleciona a alternativa correta
         int alternativaCorreta = Integer.parseInt(questoes[nQuest][5]);
@@ -592,11 +592,11 @@ private static int i;
         }
 
         // Exibe as alternativas disponíveis
-        Digitalizador(questoes[nQuest][0], 10);
+        Digitalizador(questoes[nQuest][0], delay10);
         //for (String alternativa : alternativas) 
         for (int i = 0; i < alternativas.length; i++) {
             if (alternativas[i] != null) {
-                Digitalizador(questoes[nQuest][i+1], 10);
+                Digitalizador(questoes[nQuest][i+1], delay10);
                 //System.out.println("[" + alternativas + "]");
             }
         }
