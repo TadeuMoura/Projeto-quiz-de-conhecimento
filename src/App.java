@@ -13,12 +13,12 @@ public class App {
     
     static int pontos = 0;
     static int chancesDePular = 4;
-    static int chancesDeEliminar = 3;
+    static int chancesDeEliminar = 1;
     static int carro = 0;
 
     // VARIÁVEIS DE DELAY
-    static int delay5 = 5;
-    static int delay10 = 10;
+    static int delay5 = 1;
+    static int delay10 = 1;
 
     // QUESTÕES
     static String[][] questoes = {
@@ -330,7 +330,7 @@ public class App {
                 if (i == 0) {
                     Digitalizador("Aliás esqueci de mencionar, mas existe um sistema de pontuação", 20);
                     Thread.sleep(1000);
-                    Digitalizador("Cada questão lhe dá um total de delay10 pontos quando corretas e 1 quando erradas", 20);
+                    Digitalizador("Cada questão lhe dá um total de 10 pontos quando corretas e 1 quando erradas", 20);
                     Thread.sleep(500);
 
 
@@ -348,14 +348,12 @@ public class App {
                         Digitalizador("E aparentemente você já começou acertanto!! Quanto conhecimento!!", 10);
                         System.out.println("Ou sorte.");
                         Digitalizador("Devo aumentar a dificuldade?", delay10);
-                        Digitalizador("Brincadeiras a parte. Tudo dependerá da questão que você sortear aleatoriamente.",
-                                delay10);
+                        Digitalizador("Brincadeiras a parte. Tudo dependerá da questão que você sortear aleatoriamente.",delay10);
                     }
                     Thread.sleep(1000);
 
 
                     System.out.println("ENFIM");
-                    Digitalizador("Partiu próxima questão.", delay10);
                     Thread.sleep(1000);
                 } else {
 
@@ -584,8 +582,8 @@ public class App {
         while (alternativasRemovidas < 2) {
             //int alternativaAleatoria = aleatorio.nextInt(4);
             //int index = alternativaAleatoria;
-            int nAleatorio = aleatorio.nextInt();
-            if (nAleatorio != alternativaCorreta && alternativas[nAleatorio] != null) {
+            int nAleatorio = aleatorio.nextInt(4);
+            if (nAleatorio != alternativaCorreta-1 && alternativas[nAleatorio] != null) {
                 alternativas[nAleatorio] = null;
                 alternativasRemovidas++;
             }
@@ -597,10 +595,8 @@ public class App {
         for (int i = 0; i < alternativas.length; i++) {
             if (alternativas[i] != null) {
                 Digitalizador(questoes[nQuest][i+1], delay10);
-                //System.out.println("[" + alternativas + "]");
             }
         }
-        
         chancesDeEliminar--;
     }
 }
