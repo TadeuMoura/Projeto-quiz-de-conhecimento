@@ -17,8 +17,18 @@ public class App {
     static int carro = 0;
 
     // VARIÁVEIS DE DELAY
-    static int delay5 = 1;
-    static int delay10 = 1;
+    static int delay5 = 5;
+    static int delay10 = 10;
+
+    //CORES
+    static String corVermelho   = "\u001B[31m";
+    static String corVerde      = "\u001B[32m";
+    static String corAmarela    = "\u001B[33m";
+    static String corAzul       = "\u001B[34m";
+    static String corMagenta    = "\u001B[35m";
+    static String corCiano      = "\u001B[36m";
+    static String corBranco     = "\u001B[37m";
+
 
     // QUESTÕES
     static String[][] questoes = {
@@ -290,6 +300,11 @@ public class App {
 
     // PRINCIPAL
     public static void main(String[] args) throws Exception {
+        System.out.print("\033[H\033[2J");
+        Thread.sleep(2000);
+        System.out.println(corVermelho + "Press ENTER to START" + corBranco);
+        resposta.nextLine(); 
+
 
         System.out.print("\033[H\033[2J");
         Thread.sleep(1000);
@@ -298,22 +313,27 @@ public class App {
                 "|       |  |         |___ ___|   |\n" +
                 "|       |  |         |       |   |\n" +
                 "|___ ___|  |___ ___  |       |   0";
-        Digitalizador(cumprimento, 1);
+        Digitalizador(corAzul + cumprimento + corBranco, 1);
 
         Thread.sleep(500);
         System.out.println("");
         Digitalizador("Seja bem-vindo ao Quiz do conhecimento.", delay10);
-        Thread.sleep(2000);
+        resposta.nextLine();
+        System.out.print("\033[H\033[2J");
         Digitalizador("Não precisa provar nada, só tu responder certo e seguir feliz.", delay10);
-        Thread.sleep(3000);
+        resposta.nextLine();
+        System.out.print("\033[H\033[2J");
         System.out.println("Mesmo que seja na base do chute ;D");
-        Thread.sleep(1000);
+        resposta.nextLine();
+        System.out.print("\033[H\033[2J");
         System.out.println("ENFIM!!!!!!");
-        Thread.sleep(1000);
+        resposta.nextLine();
+        System.out.print("\033[H\033[2J");
         Digitalizador("Bora começar a diversão ÒuÓ!!!!", delay10);
-        Thread.sleep(2000);
+        resposta.nextLine();
+        System.out.print("\033[H\033[2J");
         System.out.println("Ou não.");
-        Thread.sleep(1000);
+        Thread.sleep(1500);
 
         // FAZEDOR DE QUESTÃO
         String simOuNao = "S";
@@ -402,13 +422,13 @@ public class App {
     public static void QuestSele() throws InterruptedException {
 
         // TELA DE LOADING DA QUESTÃO
-        System.out.println("CARREGANDO QUESTÃO");
+        System.out.println(corCiano + "CARREGANDO QUESTÃO" + corAzul);
         Thread.sleep(2000);
         System.out.print(" . ");
         Thread.sleep(1000);
         System.out.print(" . ");
         Thread.sleep(1000);
-        System.out.print(" . ");
+        System.out.print(" . "  + corBranco);
         Thread.sleep(1000);
 
         System.out.println(" ");
@@ -418,7 +438,7 @@ public class App {
         int numeroQuestao = ChecadorDeQuestoes();
 
         // MOSTRANDO A QUESTÃO [0] E AS ALTERNATIVAS [1][2][3][4]
-        Digitalizador(questoes[numeroQuestao][0], delay10);
+        Digitalizador(corAmarela + questoes[numeroQuestao][0] + corBranco, delay10);
         Digitalizador(questoes[numeroQuestao][1], delay5);
         Digitalizador(questoes[numeroQuestao][2], delay5);
         Digitalizador(questoes[numeroQuestao][3], delay5);
