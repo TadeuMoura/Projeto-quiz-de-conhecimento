@@ -12,8 +12,8 @@ public class App {
     static Scanner resposta = new Scanner(System.in);
     
     static int pontos = 0;
-    static int chancesDePular = 4;
-    static int chancesDeEliminar = 1;
+    static int chancesDePular = 3;
+    static int chancesDeEliminar = 3;
     static int carro = 0;
 
     // VARIÁVEIS DE DELAY
@@ -303,7 +303,30 @@ public class App {
         System.out.print("\033[H\033[2J");
         Thread.sleep(2000);
         System.out.println(corVermelho + "Press ENTER to START" + corBranco);
-        resposta.nextLine(); 
+        resposta.nextLine();
+
+        System.out.print("\033[H\033[2J");
+
+        char[] animationChars = {'|', '/', '-', '\\'};
+        int totalIterations = 90;
+
+        for (int i = 0; i <= totalIterations; i++) {
+            int percent = (i * 100) / totalIterations;
+            System.out.print(" Carregando " + animationChars[i % 4] + " " + percent + "%\r");
+            Thread.sleep(50);
+        }
+        System.out.println("");
+        System.out.print(corVerde + " COMPLETED" + corVermelho + "\r");
+        Thread.sleep(2000);
+
+        for (int i = 0; i < 10; i++){
+                Thread.sleep(delay10*3);
+                System.out.print(" %$#f%?v°/°?/$)(&¨?°/E#@#@?/eq)                 \r");
+                Thread.sleep(delay10*3);
+                System.out.print(" 1110100 1110010 1101111 1101100 1100101 1101001\r");
+                Thread.sleep(delay10*3);
+                System.out.print(" CADÊ A TAMPA????                               \r");
+        }
 
 
         System.out.print("\033[H\033[2J");
@@ -331,7 +354,6 @@ public class App {
         System.out.print("\033[H\033[2J");
         Digitalizador("Bora começar a diversão ÒuÓ!!!!", delay10);
         resposta.nextLine();
-        System.out.print("\033[H\033[2J");
         System.out.println("Ou não.");
         Thread.sleep(1500);
 
@@ -439,12 +461,18 @@ public class App {
 
         // MOSTRANDO A QUESTÃO [0] E AS ALTERNATIVAS [1][2][3][4]
         Digitalizador(corAmarela + questoes[numeroQuestao][0] + corBranco, delay10);
+        System.out.println("");
         Digitalizador(questoes[numeroQuestao][1], delay5);
         Digitalizador(questoes[numeroQuestao][2], delay5);
         Digitalizador(questoes[numeroQuestao][3], delay5);
         Digitalizador(questoes[numeroQuestao][4], delay5);
 
         if (chancesDeEliminar > 0) {
+                System.out.println("");
+                Digitalizador("Você pode eliminar duas das alternativas " + chancesDeEliminar + " vez(es), basta digitar T.", 5);
+        }
+
+        if (chancesDePular > 0) {
                 Digitalizador("Você pode eliminar duas das alternativas " + chancesDeEliminar + " vez(es), basta digitar T.", 5);
         }
 
@@ -577,6 +605,7 @@ public class App {
         } else {
 
             // SE A RESPOSTA ESTIVER ERRADA
+            System.out.print("\033[H\033[2J");
             Digitalizador("A reposta está EEEEEEEEEEEEEEEEEEEEEEEEErrada :(", 100);
             pontos = pontos + 1;
             System.out.println("Pontuação: " + pontos);
