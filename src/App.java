@@ -435,7 +435,7 @@ public class App {
                          
                         
                         
-                    if (i == 20){
+                    if (i < 20){
                         Digitalizador("Próxima questão", delay10);
                         Thread.sleep(2000);
                     } else {
