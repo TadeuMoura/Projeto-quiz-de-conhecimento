@@ -14,6 +14,7 @@ public class App {
     static int chancesDeEliminar = 3;
     static int carro = 1;
     static int falado = 0;
+    static int numeroDeQuestoes = 20;
 
     // VARIÁVEIS DE DELAY
     static int delay5 = 5;
@@ -299,69 +300,69 @@ public class App {
 
     // PRINCIPAL
     public static void main(String[] args) throws Exception {
-        // System.out.print("\033[H\033[2J");
-        // Thread.sleep(2000);
-        // System.out.println(corVermelho + "Press ENTER to START" + corBranco);
-        // resposta.nextLine();
+        System.out.print("\033[H\033[2J");
+        Thread.sleep(2000);
+        System.out.println(corVermelho + "Press ENTER to START" + corBranco);
+        resposta.nextLine();
 
-        // System.out.print("\033[H\033[2J");
+        System.out.print("\033[H\033[2J");
 
-        // char[] animationChars = {'|', '/', '-', '\\'};
-        // int totalIterations = 90;
+        char[] animationChars = {'|', '/', '-', '\\'};
+        int totalIterations = 90;
 
-        // for (int i = 0; i <= totalIterations; i++) {
-        //     int percent = (i * 100) / totalIterations;
-        //     System.out.print(" Carregando " + animationChars[i % 4] + " " + percent + "%\r");
-        //     Thread.sleep(50);
-        // }
-        // System.out.println("");
-        // System.out.print(corVerde + " COMPLETED" + corVermelho + "\r");
-        // Thread.sleep(2000);
+        for (int i = 0; i <= totalIterations; i++) {
+            int percent = (i * 100) / totalIterations;
+            System.out.print(" Carregando " + animationChars[i % 4] + " " + percent + "%\r");
+            Thread.sleep(50);
+        }
+        System.out.println("");
+        System.out.print(corVerde + " COMPLETED" + corVermelho + "\r");
+        Thread.sleep(2000);
 
-        // for (int i = 0; i < 10; i++){
-        //         Thread.sleep(delay10*3);
-        //         System.out.print(" %$#f%?v°/°?/$)(&¨?°/E#@#@?/eq)                 \r");
-        //         Thread.sleep(delay10*3);
-        //         System.out.print(" 1110100 1110010 1101111 1101100 1100101 1101001\r");
-        //         Thread.sleep(delay10*3);
-        //         System.out.print(" CADÊ A TAMPA????                               \r");
-        // }
+        for (int i = 0; i < 10; i++){
+                Thread.sleep(delay10*3);
+                System.out.print(" %$#f%?v°/°?/$)(&¨?°/E#@#@?/eq)                 \r");
+                Thread.sleep(delay10*3);
+                System.out.print(" 1110100 1110010 1101111 1101100 1100101 1101001\r");
+                Thread.sleep(delay10*3);
+                System.out.print(" CADÊ A TAMPA????                               \r");
+        }
 
 
-        // System.out.print("\033[H\033[2J");
-        // Thread.sleep(1000);
-        // String cumprimento = " ___ ___              ___ ___\n" +
-        //         "|       |  |         |       |   |\n" +
-        //         "|       |  |         |___ ___|   |\n" +
-        //         "|       |  |         |       |   |\n" +
-        //         "|___ ___|  |___ ___  |       |   0";
-        // Digitalizador(corAzul + cumprimento + corBranco, 1);
+        System.out.print("\033[H\033[2J");
+        Thread.sleep(1000);
+        String cumprimento = " ___ ___              ___ ___\n" +
+                "|       |  |         |       |   |\n" +
+                "|       |  |         |___ ___|   |\n" +
+                "|       |  |         |       |   |\n" +
+                "|___ ___|  |___ ___  |       |   0";
+        Digitalizador(corAzul + cumprimento + corBranco, 1);
 
-        // Thread.sleep(500);
-        // System.out.println("");
-        // Digitalizador("Seja bem-vindo ao Quiz do conhecimento.", delay10);
-        // resposta.nextLine();
-        // System.out.print("\033[H\033[2J");
-        // Digitalizador("Não precisa provar nada, só tu responder certo e seguir feliz.", delay10);
-        // resposta.nextLine();
-        // System.out.print("\033[H\033[2J");
-        // System.out.println("Mesmo que seja na base do chute ;D");
-        // resposta.nextLine();
-        // System.out.print("\033[H\033[2J");
-        // System.out.println("ENFIM!!!!!!");
-        // resposta.nextLine();
-        // System.out.print("\033[H\033[2J");
-        // Digitalizador("Bora começar a diversão ÒuÓ!!!!", delay10);
-        // resposta.nextLine();
-        // System.out.println("Ou não.");
-        // Thread.sleep(1500);
+        Thread.sleep(500);
+        System.out.println("");
+        Digitalizador("Seja bem-vindo ao Quiz do conhecimento.", delay10);
+        resposta.nextLine();
+        System.out.print("\033[H\033[2J");
+        Digitalizador("Não precisa provar nada, só tu responder certo e seguir feliz.", delay10);
+        resposta.nextLine();
+        System.out.print("\033[H\033[2J");
+        System.out.println("Mesmo que seja na base do chute ;D");
+        resposta.nextLine();
+        System.out.print("\033[H\033[2J");
+        System.out.println("ENFIM!!!!!!");
+        resposta.nextLine();
+        System.out.print("\033[H\033[2J");
+        Digitalizador("Bora começar a diversão ÒuÓ!!!!", delay10);
+        resposta.nextLine();
+        System.out.println("Ou não.");
+        Thread.sleep(1500);
 
         // FAZEDOR DE QUESTÃO
         String simOuNao = "S";
 
         // REPETIÇÃO QUE SÓ É TERMINADA QUANDO A PESSOA NÃO QUISER JOGAR DENOVO
         while (simOuNao.equals("S")) {
-            for (int i = 0; i < 20; i++) {
+            for (int i = 0; i < numeroDeQuestoes; i++) {
                   
                 System.out.print("\033[H\033[2J");
 
@@ -421,40 +422,115 @@ public class App {
                 
                 if(pontos > 100 && falado == 0) {
                     Digitalizador("Mais que 100 pontos parabéns!!! ", delay10);
+                    resposta.nextLine();
                     falado = 1;  
                 }
                 
                 if(i == 20 && carro == 1){
-                                Digitalizador("Sabe aquele carro que eu te prometi no começo do jogo?, então... acabei de bater ele no poste rs.", 0);   
-                                resposta.nextLine();
-                                System.out.print("\033[H\033[2J");
-                                Digitalizador("Tirando a parte ruim,", i);
-                                Thread.sleep(500);
+                    Digitalizador("Sabe aquele carro que eu te prometi no começo do jogo?, então... acabei de bater ele no poste rs.", 0);   
+                    resposta.nextLine();
+                    System.out.print("\033[H\033[2J");
+                    Digitalizador("Mas tirando a parte ruim,...", delay10);
+                    Thread.sleep(500);
                 }
+                        
+                if (i < numeroDeQuestoes - 1){
+                    Digitalizador("Próxima questão", delay10);
+                    Thread.sleep(2000);
+                } else {
+                Digitalizador("Parabéns, você terminou o nosso QUIZ!!!!!", delay10);
+                    if (pontos < 50){
+                        Digitalizador("Você fez: ", delay10);
+                        Digitalizador(". . .", 500);
+                        Thread.sleep(100);
+                        Digitalizador("fez: " + pontos + " pontos...", 100);
+                        resposta.nextLine();
+                        System.out.print("\033[H\033[2J");
+                        Digitalizador("Realmente foi complicado, mas não desista, você ainda pode tentar de novo. :D", 10);
+                        resposta.nextLine();
+                        System.out.print("\033[H\033[2J");
+                        Digitalizador("Alias!!!", 10);
+                        Thread.sleep(1000);
+                        System.out.print("\033[H\033[2J");
 
-                         
-                        
-                        
-                    if (i < 20){
-                        Digitalizador("Próxima questão", delay10);
-                        Thread.sleep(2000);
-                    } else {
-                        Digitalizador("Parabéns, você terminou o nosso QUIZ!!!!!", delay10);
-                        if (pontos < 50){
-                            Digitalizador("Você fez: ", delay10);
-                            Digitalizador(". . .", 500);
-                            Digitalizador("fez: " + pontos + " pontos...", 100);
-                        } else if (pontos >= 50 && pontos < 100){
-                            Digitalizador("Você fez: ", delay10);
-                        } else if (pontos >= 100 && pontos < 150){
-                            Digitalizador("Você fez: ", delay10);
-                        } else if (pontos >= 150 && pontos < 200){
-                            Digitalizador("Você fez: ", delay10);
-                        } else if (pontos >= 200){
-                            Digitalizador("Você fez 200 PONTOS!!!!!!! ", delay10);
-                        }
+                    } else if (pontos >= 50 && pontos < 100){
+                        Digitalizador("Você fez: " + pontos + " pontos.", delay10);
+                        resposta.nextLine();
+                        System.out.print("\033[H\033[2J");
+                        Digitalizador("Hmmmmmmmmmmmmmmmmmm...", delay10);
+                        resposta.nextLine();
+                        System.out.print("\033[H\033[2J");
+                        Digitalizador("Se serve de consolo,", delay10);
+                        resposta.nextLine();
+                        System.out.print("\033[H\033[2J");
+                        Digitalizador("poderia ter sido bem pior :D", delay10);
+                        resposta.nextLine();
+                        System.out.print("\033[H\033[2J");
+                        Digitalizador("MAS EU TENHO CERTEZA,", delay10);
+                        resposta.nextLine();
+                        System.out.print("\033[H\033[2J");
+                        Digitalizador("CERTEZA!!!", delay10);
+                        resposta.nextLine();
+                        System.out.print("\033[H\033[2J");
+                        Digitalizador("Que se você jogar de novo, sua pontuação vai melhorar :DDD", delay10);
+                        resposta.nextLine();
+                        System.out.print("\033[H\033[2J");
+                        Digitalizador("ou não", delay10);
+                        Thread.sleep(500);
+                        System.out.print("\033[H\033[2J");
+                        Digitalizador("Mas eae,", delay10);
+                        Thread.sleep(1000);
+
+                    } else if (pontos >= 100 && pontos < 150){
+                        Digitalizador("Você fez: " + pontos + " pontos.", delay10);
+                        resposta.nextLine();
+                        System.out.print("\033[H\033[2J");
+                        Digitalizador("Fizestes uma boa pontuação parabéns :D.", delay10);
+                        resposta.nextLine();
+
+                    } else if (pontos >= 150 && pontos < 191){
+                        Digitalizador("Você fez: " + pontos + " pontos.", delay10);
+                        resposta.nextLine();
+                        System.out.print("\033[H\033[2J");
+                        Digitalizador("Com certeza uma ótima pontuação, continue assim que você pode chegar bem longe ;D", delay10);
+                        resposta.nextLine();
+
+                    } else if (pontos >= 191 && pontos < 200){
+                        Digitalizador("Você fez: "+ pontos + " pontos.", delay10);
+                        resposta.nextLine();
+                        System.out.print("\033[H\033[2J");
+                        Digitalizador("Puts, por uma questão :(, mas vamos não desanime, olha o quão longe você conseguiu chegar.", delay10);
+                        resposta.nextLine();
+                        System.out.print("\033[H\033[2J");
+                        Digitalizador("Se você conseguiu marcar até aqui, com certeza você pode marcar todas corretamente :D.", delay10);
+                        resposta.nextLine();
+                        System.out.print("\033[H\033[2J");
+                        Digitalizador(corVerde + "Eu acredito" + corBranco, 100);
+                        resposta.nextLine();
+                        System.out.print("\033[H\033[2J");
+                        Digitalizador("Mas enfim,", delay10);
+                        Thread.sleep(1000);
+
+                    } else if (pontos >= 200){
+                        Digitalizador(corVerde + "Você fez 200 PONTOS!!!!!!! ", delay10);
+                        resposta.nextLine();
+                        System.out.print("\033[H\033[2J");
+                        Digitalizador("Você conseguiu chegar onde poucos pisaram", delay10);
+                        resposta.nextLine();
+                        System.out.print("\033[H\033[2J");
+                        Digitalizador("Eu nem pediria pra você jogar denovo, pois você conseguiu atingir um grande patamar, meus sinceros parabéns!!", delay10);
+                        resposta.nextLine();
+                        System.out.print("\033[H\033[2J");
+                        Digitalizador("Maaasss, como fui programado para falar isso, não posso fazer muita coisa :/", delay10);
+                        resposta.nextLine();
+                        System.out.print("\033[H\033[2J");
+                        Digitalizador("Mas meus parabéns,continue assim ;D" + corBranco, delay10);
+                        resposta.nextLine();
+
                     }
                 }
+            }
+                System.out.print("\033[H\033[2J");
                 Digitalizador("Quer jogar de novo?", delay10);
                 Thread.sleep(500);
                 System.out.println("S para SIM!!! e n para não.");
@@ -483,44 +559,47 @@ public class App {
 
     // ## SELETOR DE QUESTÕES
     public static void QuestSele() throws InterruptedException {
+    
+        //Caso a questão seja pulada
+        int pulador = 1;
+        while (pulador == 1) {
+            // TELA DE LOADING DA QUESTÃO
+            System.out.print("\033[H\033[2J");
+            System.out.println(corCiano + "CARREGANDO QUESTÃO" + corAzul);
+            Thread.sleep(2000);
+            System.out.print(" . ");
+            Thread.sleep(1000);
+            System.out.print(" . ");
+            Thread.sleep(1000);
+            System.out.print(" . "  + corBranco);
+            Thread.sleep(1000);
 
-        // TELA DE LOADING DA QUESTÃO
-        System.out.println(corCiano + "CARREGANDO QUESTÃO" + corAzul);
-        Thread.sleep(2000);
-        System.out.print(" . ");
-        Thread.sleep(1000);
-        System.out.print(" . ");
-        Thread.sleep(1000);
-        System.out.print(" . "  + corBranco);
-        Thread.sleep(1000);
+            System.out.println(" ");
+            System.out.print("\033[H\033[2J");
 
-        System.out.println(" ");
-        System.out.print("\033[H\033[2J");
+            // USA O CHECADOR DE QUESTÕES PARA PEGAR UMA QUESTÃO ALEATÓRIA
+            int numeroQuestao = ChecadorDeQuestoes();
 
-        // USA O CHECADOR DE QUESTÕES PARA PEGAR UM NOME ALEATÓRIO
-        int numeroQuestao = ChecadorDeQuestoes();
+            // MOSTRANDO A QUESTÃO [0] E AS ALTERNATIVAS [1][2][3][4]
+            Digitalizador(corAmarela + questoes[numeroQuestao][0] + corBranco, delay10);
+            System.out.println("");
+            Digitalizador(questoes[numeroQuestao][1], delay5);
+            Digitalizador(questoes[numeroQuestao][2], delay5);
+            Digitalizador(questoes[numeroQuestao][3], delay5);
+            Digitalizador(questoes[numeroQuestao][4], delay5);
 
-        // MOSTRANDO A QUESTÃO [0] E AS ALTERNATIVAS [1][2][3][4]
-        Digitalizador(corAmarela + questoes[numeroQuestao][0] + corBranco, delay10);
-        System.out.println("");
-        Digitalizador(questoes[numeroQuestao][1], delay5);
-        Digitalizador(questoes[numeroQuestao][2], delay5);
-        Digitalizador(questoes[numeroQuestao][3], delay5);
-        Digitalizador(questoes[numeroQuestao][4], delay5);
+            if (chancesDeEliminar > 0) {
+                    System.out.println("");
+                    Digitalizador("Você pode eliminar duas das alternativas " + chancesDeEliminar + " vez(es), basta digitar T.", 5);
+            }
 
-        if (chancesDeEliminar > 0) {
-                System.out.println("");
-                Digitalizador("Você pode eliminar duas das alternativas " + chancesDeEliminar + " vez(es), basta digitar T.", 5);
+            if (chancesDePular > 0) {
+                    Digitalizador("Você pode pular questões " + chancesDePular + " vez(es), basta digitar P.", 5);
+            }
+
+            // VERIFICA A DIGITAÇÃO DA ALTERNATIVA
+            pulador = AnlsDeAlternativa(numeroQuestao);
         }
-
-        if (chancesDePular > 0) {
-                Digitalizador("Você pode eliminar duas das alternativas " + chancesDeEliminar + " vez(es), basta digitar T.", 5);
-        }
-
-        
-        // VERIFICA A DIGITAÇÃO DA ALTERNATIVA
-        AnlsDeAlternativa(numeroQuestao);
-
     }
 
     // ## DIGITALIZADOR.
@@ -564,7 +643,7 @@ public class App {
     }
 
     // ## ALTERNATIVA
-    public static void AnlsDeAlternativa(int nquest) throws InterruptedException {
+    public static int AnlsDeAlternativa(int nquest) throws InterruptedException {
 
         // RESPOSTA VAZIA
         String resp = "";
@@ -574,7 +653,7 @@ public class App {
 
         // DEFINI QUAL RESPOSTA MOSTRAR SE A PESSOA DIGITAR ERRADO UMA OU MAIS VEZES
         int repetidor = 0;
-
+        int retorno = 0;
         int numeroAlternativa = 0;
 
         // SAI DA REPETIÇÃO QUANDO O VALIDADOR FOR VERDADEIRO
@@ -583,7 +662,28 @@ public class App {
             
             if (resp.equals("T") && chancesDeEliminar > 0) {
                 EliminarAlternativas(nquest);
+                
+                if (chancesDePular > 0) {
+                    System.out.println("");
+                    Digitalizador("Você pode pular questões " + chancesDePular + " vez(es), basta digitar P.", 5);
+                }
+                String palavra = "ABCDP";
                 resp = resposta.next().toUpperCase();
+
+                while (!palavra.contains(resp)){
+                    Digitalizador("Digite uma das alternativas apresentadas.",delay10);
+                    if (chancesDePular > 0) {
+                        Digitalizador("Ou digite P caso queira pular a questão, você pode pular " + chancesDePular + " vez(es)", 5);
+                        resp = resposta.next().toUpperCase();
+                    }
+                    
+                }
+            }
+            
+            if (resp.equals("P") && chancesDePular > 0){
+                chancesDePular--;
+                retorno = 1;
+                return retorno;
             }
 
             // VALIDA SE A PESSOA DIGITAR A, B, C OU D
@@ -639,7 +739,7 @@ public class App {
         // SE A RESPOSTA ESTIVER CORRETA
         if (numeroAlternativa ==  Integer.parseInt(questoes[nquest][5])) {
             System.out.print("\033[H\033[2J");
-            Digitalizador("A reposta está EEEEEEEEEEEEEEEEEEEEEEEEEXATA!!!!!", 100);
+            Digitalizador("A resposta está EEEEEEEEEEEEEEEEEEEEEEEEEXATA!!!!!", 100);
             pontos = pontos + 10;
             System.out.println("Pontuação: " + pontos);
             Thread.sleep(2000);
@@ -647,14 +747,14 @@ public class App {
 
             // SE A RESPOSTA ESTIVER ERRADA
             System.out.print("\033[H\033[2J");
-            Digitalizador("A reposta está EEEEEEEEEEEEEEEEEEEEEEEEErrada :(", 100);
+            Digitalizador("A resposta está EEEEEEEEEEEEEEEEEEEEEEEEErrada :(", 100);
             pontos = pontos + 1;
             System.out.println("Pontuação: " + pontos);
             Thread.sleep(2000);
         }
+        retorno = 0;
+        return retorno;
     }
-
-    // ## PULA QUESTÃO
 
     // ## ELIMINA ALTERNATIVA
     public static void EliminarAlternativas(int nQuest) throws InterruptedException {
@@ -678,6 +778,7 @@ public class App {
         }
 
         // Exibe as alternativas disponíveis
+        System.out.print("\033[H\033[2J");
         Digitalizador(questoes[nQuest][0], delay10);
         //for (String alternativa : alternativas) 
         for (int i = 0; i < alternativas.length; i++) {
