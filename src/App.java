@@ -780,7 +780,6 @@ public class App {
         // Exibe as alternativas disponíveis
         System.out.print("\033[H\033[2J");
         Digitalizador(questoes[nQuest][0], delay10);
-        //for (String alternativa : alternativas) 
         for (int i = 0; i < alternativas.length; i++) {
             if (alternativas[i] != null) {
                 Digitalizador(questoes[nQuest][i+1], delay10);
