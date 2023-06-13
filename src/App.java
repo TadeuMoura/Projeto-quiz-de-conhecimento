@@ -8,11 +8,10 @@ import java.util.Random;
 public class App {
     // VARIÁVEIS GLOBAIS
     static Scanner resposta = new Scanner(System.in);
-    
     static int pontos = 0;
     static int chancesDePular = 3;
     static int chancesDeEliminar = 3;
-    static int carro = 1;
+    static int carro = 0;
     static int falado = 0;
     static int numeroDeQuestoes = 20;
 
@@ -409,8 +408,8 @@ public class App {
                     Thread.sleep(1000);
                 } 
 
-                if(pontos == 50 && i == 5) {
-                        Digitalizador("Tá acertando todas em, se continuar assim vai ganhar um carro no final do jogo.",0); 
+                if(pontos >= 150 && carro == 0) {
+                        Digitalizador("Tá acertando várias hein, se continuar assim vai ganhar um carro no final do jogo.",0); 
                         resposta.nextLine();
                         carro = 1;  
                 } 
@@ -425,25 +424,26 @@ public class App {
                     resposta.nextLine();
                     falado = 1;  
                 }
-                
-                if(i == 20 && carro == 1){
-                    Digitalizador("Sabe aquele carro que eu te prometi no começo do jogo?, então... acabei de bater ele no poste rs.", 0);   
-                    resposta.nextLine();
-                    System.out.print("\033[H\033[2J");
-                    Digitalizador("Mas tirando a parte ruim,...", delay10);
-                    Thread.sleep(500);
-                }
                         
                 if (i < numeroDeQuestoes - 1){
                     Digitalizador("Próxima questão", delay10);
                     Thread.sleep(2000);
                 } else {
-                Digitalizador("Parabéns, você terminou o nosso QUIZ!!!!!", delay10);
+                    if(carro == 1){
+                        Digitalizador("Sabe aquele carro que eu te prometi no começo do jogo?, então... acabei de bater ele no poste rs.", 0);   
+                        resposta.nextLine();
+                        System.out.print("\033[H\033[2J");
+                        Digitalizador("Mas tirando a parte ruim,...", delay10);
+                        Thread.sleep(500);
+                    }
+                    
+                    Digitalizador(corMagenta + "Parabéns, você terminou o nosso QUIZ!!!!!" + corBranco, delay10);
+                    Thread.sleep(1000);
                     if (pontos < 50){
                         Digitalizador("Você fez: ", delay10);
                         Digitalizador(". . .", 500);
                         Thread.sleep(100);
-                        Digitalizador("fez: " + pontos + " pontos...", 100);
+                        Digitalizador("fez: " + corVermelho + pontos + corBranco + " pontos...", 100);
                         resposta.nextLine();
                         System.out.print("\033[H\033[2J");
                         Digitalizador("Realmente foi complicado, mas não desista, você ainda pode tentar de novo. :D", 10);
@@ -454,7 +454,7 @@ public class App {
                         System.out.print("\033[H\033[2J");
 
                     } else if (pontos >= 50 && pontos < 100){
-                        Digitalizador("Você fez: " + pontos + " pontos.", delay10);
+                        Digitalizador("Você fez: " + corMagenta + pontos + corBranco + " pontos.", delay10);
                         resposta.nextLine();
                         System.out.print("\033[H\033[2J");
                         Digitalizador("Hmmmmmmmmmmmmmmmmmm...", delay10);
@@ -482,21 +482,21 @@ public class App {
                         Thread.sleep(1000);
 
                     } else if (pontos >= 100 && pontos < 150){
-                        Digitalizador("Você fez: " + pontos + " pontos.", delay10);
+                        Digitalizador("Você fez: " + corAmarela + pontos + corBranco + " pontos.", delay10);
                         resposta.nextLine();
                         System.out.print("\033[H\033[2J");
                         Digitalizador("Fizestes uma boa pontuação parabéns :D.", delay10);
                         resposta.nextLine();
 
                     } else if (pontos >= 150 && pontos < 191){
-                        Digitalizador("Você fez: " + pontos + " pontos.", delay10);
+                        Digitalizador("Você fez: " + corAzul + pontos + corBranco + " pontos.", delay10);
                         resposta.nextLine();
                         System.out.print("\033[H\033[2J");
                         Digitalizador("Com certeza uma ótima pontuação, continue assim que você pode chegar bem longe ;D", delay10);
                         resposta.nextLine();
 
                     } else if (pontos >= 191 && pontos < 200){
-                        Digitalizador("Você fez: "+ pontos + " pontos.", delay10);
+                        Digitalizador("Você fez: " + corCiano + pontos + corBranco + " pontos.", delay10);
                         resposta.nextLine();
                         System.out.print("\033[H\033[2J");
                         Digitalizador("Puts, por uma questão :(, mas vamos não desanime, olha o quão longe você conseguiu chegar.", delay10);
